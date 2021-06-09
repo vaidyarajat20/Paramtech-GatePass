@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}" type="text/css" />
+    <title>GatePass</title> 
+</head>
+<body id="bg" style="background-image:url('{% static 'images/h4.jpg'%}')">
+    <img src="{% static 'images/param.jpg'%}" class="logo">
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Master</a>
+          <ul>
+            <li><a href="#">Visitor's Details</a></li>
+            <li><a href="#">Contractor's Details</a></li>
+            <li><a href="#">User Details</a></li>
+            <li><a href="#">Add User</a></li>
+          </ul>     
+        </li>
+        <li><a href="#">Status</a></li>
+        <li><a href="#">Reports</a>
+            <ul>
+                <li><a href="#">Todays</a>
+                    <ul class="show">
+                        <li><a href="#">Visitor</a></li>
+                        <li><a href="#">Contractor</a></li>
+                    </ul>     
+                </li>
+                <li><a href="#">DateWise</a></li>
+                <li><a href="#">Banned</a>
+                    <ul class="show">
+                        <li><a href="#">Banned Visitor</a></li>
+                        <li><a href="#">Banned Contractor</a></li>
+                    </ul>     
+                </li>
+                <li><a href="#">Appointments</a></li>
+                <li><a href="#">Cancelled Appoint</a></li>
+                <li><a href="#">Employeewise Appoint</a></li>
+                <li><a href="#">Visitorwise Appoint</a></li>
+                <li><a href="#">Contractorwise Appoint</a></li>
+                <li><a href="#">Contractual Checked In</a></li>
+                <li><a href="#">DateWise Contractual</a></li>
+              </ul>     
+        </li>
+        <li><a href="#">Help</a></li>
+        <li><a href="{{cp}}">Change Password</a></li>
+        <li><a href="{{lg}}">LogOut</a></li>
+    </ul>
+    <img src="{% static 'images/h6.jpg'%}" class="log"> 
+    
+</html>

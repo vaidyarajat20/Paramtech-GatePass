@@ -1,0 +1,58 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgetPass</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}" type="text/css"/>
+</head>
+<body id="bg" style="background-image:url('{% static 'images/r1.jpg'%}')">
+    <div class="a">
+        <h1><span class="colorchange">FORGET PASSWORD</span></h1>
+        <form action="#" name="myfun" onsubmit="return validation()" >
+            <p>UserName</p>
+            <input type="text" name="" placeholder="Enter Hospital Id">   
+            <p>NEW PASSWORD</p>
+            <input type="password" name="" id="hpass" placeholder="Enter New Password"><span id="pa"></span>
+            <p>CONFORM PASSWORD</p>
+            <input type="password" name="" id="hcpass" placeholder="Re-Type Password"><span id="paa"></span><br>
+            <input type="submit" name="" value="submit"> 
+        </form>
+    </div>
+    <script>
+        function validation(){
+            var z = document.getElementById("hpass").value;
+            if(z.length < 6){
+                document.getElementById("pa").innerHTML = "Password Must Be Greater Than 6 charecter";
+                return false;
+            }
+            if(z.length > 20){
+                document.getElementById("pa").innerHTML = "Password Gives Minimum 20 charecter";
+                return false;
+            }
+            if(z.search(/[0-9]/) == -1){
+                document.getElementById("pa").innerHTML = "At Least 1 Numeric Value Must Be Enter";
+                return false;
+            }
+            if(z.search(/[a-z]/) == -1){
+                document.getElementById("pa").innerHTML = "At Least 1 Small Letter Must Be Enter";
+                return false;
+            }
+            if(z.search(/[A-Z]/) == -1){
+                document.getElementById("pa").innerHTML = "At Least 1 Uppercase Letter Must Be Enter";
+                return false;
+            }
+            if(z.search(/[!\@\#\$\^\&\_\-\+\=\<\>\;\%\:]/) == -1){
+                document.getElementById("pa").innerHTML = "At Least 1 Special Charecter Must Be Enter";
+                return false;
+            }
+            var x = document.getElementById("hcpass").value;
+            if(z != x){
+                document.getElementById("paa").innerHTML = "Password Does Not Match";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

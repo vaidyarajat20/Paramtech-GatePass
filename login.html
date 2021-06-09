@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <title>GatePassLogin</title>
+    
+</head>
+<body id="bg" style="background-image:url('{% static 'images/1.jpg'%}')"> 
+    <img src="{% static 'images/param.jpg'%}" class="logo">
+    <h1 class="colorchange">Param Technologies</h1>
+    
+    <div class="loginbox">
+        <img src="{% static 'images/logo.png'%}" class="avtar">
+        <h2>LOGIN HERE</h2>
+        <form>
+            <p>Select Department
+                <select>
+                    <option>Select</option>
+                    <option>Admin</option>
+                    <option>Security</option>
+                    <option>User</option>
+                    <option>HRAdmin</option>
+                    <option>Maintaince</option>
+                </select>
+            </p><br>
+            <p>Enter UserName</p>
+            <input type="text" name="" placeholder="Enter UserName">
+            <p>PASSWORD</p>
+            <input type="password" name="" placeholder="Enter Password" id="myinput">
+            <span class="eye" onclick="myfunction()">
+               <i id="hide1" class="fa fa-eye"></i>
+               <i id="hide2" class="fa fa-eye-slash"></i>
+            </span>
+            <input type="submit" name="" value="LogIn"><br>
+            <a href="{{fp}}"><b>Forget Password</b></a><br><br>
+            
+        </form>
+    </div>
+
+    <script>
+        function myfunction(){
+            var x =document.getElementById("myinput");
+            var y =document.getElementById("hide1");
+            var z =document.getElementById("hide2");
+            if(x.type === 'password'){
+                x.type = "text";
+                y.style.display = "block";
+                z.style.display = "none";
+            }
+            else{
+                x.type = "password";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
